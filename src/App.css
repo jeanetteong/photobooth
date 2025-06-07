@@ -1,7 +1,7 @@
 /* Font Config */
 @font-face {
-  font-family: 'Milkyway';
-  src: url('./assets/fonts/Milkyway.ttf') format('truetype');
+  font-family: "Milkyway";
+  src: url("./assets/fonts/Milkyway.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -13,36 +13,70 @@
   text-align: center;
 }
 
-
 body {
-  font-family: 'Milkyway', sans-serif;
-  background-color: #C1E1C1;
+  font-family: "Milkyway", sans-serif;
+  background-color: #c1e1c1;
   text-align: center;
 }
 
 /* Welcome Page Styling */
 .welcome-title {
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   font-size: 80px;
 }
 
 .photobooth-name {
-  color: #3B5E3B;
+  color: #3b5e3b;
   text-shadow: none;
 }
 
 .start-button {
-  background-color: #3B5E3B;
-  color: #FFFFFF;
+  background-color: #3b5e3b;
+  color: #ffffff;
   font-size: 40px;
   border-radius: 100px;
-  padding:15px 100px 5px 100px;
+  padding: 15px 100px 5px 100px;
   margin-top: 150px;
   transition: background-color 0.3s, transform 0.3s;
 }
 
 .start-button:hover {
-  background-color: #2E4B2E;
+  background-color: #2e4b2e;
   transform: scale(1.1);
+}
+
+/* Picture Page Styling */
+.webcam-video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.capture-button {
+  margin-top: 16px;
+  font-size: 16px;
+  background-color: #3b5e3b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.taken-picture {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }
