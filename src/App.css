@@ -59,13 +59,18 @@ body {
 
 .capture-button {
   margin-top: 16px;
-  font-size: 16px;
+  font-size: 25px;
   background-color: #3b5e3b;
   color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s;
+}
+
+.capture-button:hover {
+  background-color: #2e4b2e;
+  transform: scale(1.1);
 }
 
 .taken-picture {
@@ -78,10 +83,6 @@ body {
 
 .hide {
   display: none;
-}
-
-.show {
-  display: block;
 }
 
 .countdown-overlay {

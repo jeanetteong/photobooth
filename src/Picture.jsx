@@ -6,6 +6,7 @@ export default function Picture() {
   const [photoTaken, setPhotoTaken] = useState(false);
   const [countdown, setCountdown] = useState(0);
   const [photos, setPhotos] = useState([]);
+  const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
     //Request webcam access
@@ -26,6 +27,8 @@ export default function Picture() {
 
   //5 sec countdown
   const startCountdown = () => {
+    setIsHidden(true);
+
     let photoCount = 0;
 
     const takeNextPhoto = () => {
@@ -44,7 +47,6 @@ export default function Picture() {
           photoCount++;
 
           if (photoCount < 4) {
-            // Wait 1 second before starting next countdown
             setTimeout(takeNextPhoto, 1000);
           } else {
             setCountdown(0);
@@ -83,9 +85,11 @@ export default function Picture() {
           </div>
         )}
       </div>
-      <button onClick={startCountdown} className="capture-button">
-        Capture Photo
-      </button>
+      {!isHidden && (
+        <button onClick={startCountdown} className="capture-button">
+          CAPTURE PHOTO
+        </button>
+      )}
 
       <canvas ref={canvasRef} className="hide" />
 
