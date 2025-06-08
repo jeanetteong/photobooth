@@ -47,6 +47,10 @@ body {
 }
 
 /* Picture Page Styling */
+.video-container {
+  position: relative;
+}
+
 .webcam-video {
   width: 100%;
   border-radius: 12px;
@@ -69,9 +73,8 @@ body {
   width: 100%;
   max-width: 600px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-
 
 .hide {
   display: none;
@@ -79,4 +82,28 @@ body {
 
 .show {
   display: block;
+}
+
+.countdown-overlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 72px;
+  color: white;
+  padding: 30px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.photo-gallery {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.photo-thumbnail {
+  width: 150px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
