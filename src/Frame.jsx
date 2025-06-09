@@ -1,14 +1,34 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function Frame() {
+  const navigate = useNavigate();
   const location = useLocation();
   const photos = location.state?.photos || [];
+
+  const frames = ["smiski_frame.png", "stardew_frame.png"];
+  const [frameIndex, setFrameIndex] = useState(0);
+
+  const handlePrev = () => {
+    setFrameIndex((prev) => (prev - 1 + frames.length) % frames.length);
+  };
+  const handleNext = () => {
+    setFrameIndex((prev) => (prev + 1) % frames.length);
+  };
 
   return (
     <div>
       <h1 className="frame-title">CHOOSE A FRAME</h1>
       <div className="frame-container">
-        <img className="frame" src="./src/assets/images/smiski_frame.png" alt="Smiski Frame"/>
+        <button className="arrow left-arrow" onClick={handlePrev}>
+          &#10094;
+        </button>
+        <img
+          className="frame"
+          src={`./src/assets/images/${frames[frameIndex]}`}
+          alt="Photo Frame"
+        />
+
         <div className="photostrip">
           {photos.map((src, index) => (
             <img
@@ -19,7 +39,22 @@ export default function Frame() {
             />
           ))}
         </div>
+
+        <button className="arrow right-arrow" onClick={handleNext}>
+          &#10095;
+        </button>
       </div>
+
+      <button
+        className="confirm-button"
+        onClick={() =>
+          navigate("/save", {
+            state: { photos, selectedFrame: frames[frameIndex] },
+          })
+        }
+      >
+        CONFIRM
+      </button>
     </div>
   );
 }

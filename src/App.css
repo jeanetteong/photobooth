@@ -128,6 +128,7 @@ body {
 
 /* Frame Page Styling */
 .frame-title {
+  color: #3b5e3b;
   margin-bottom: 100px;
 }
 
@@ -135,20 +136,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom:100px;
+  margin-bottom: 100px;
 }
 
 .photostrip {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
   position: relative;
   z-index: 1;
   top: -35px;
 }
 
 .frame-photo {
-  width: 166px;
+  width: 170px;
   height: auto;
   object-fit: cover;
 }
@@ -156,5 +157,57 @@ body {
 .frame {
   position: absolute;
   z-index: 2;
-  box-shadow:4px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.arrow {
+  position: absolute;
+  font-size: 4rem;
+  border: none;
+  cursor: pointer;
+  background: none;
+  z-index: 3;
+  transition: transform 0.3s ease;
+  background-color: #c1e1c1;
+  color: #3b5e3b;
+  padding: 0;
+}
+
+.arrow:hover {
+  transform: scale(1.3);
+  color: #2e4b2e;
+}
+
+.arrow:focus {
+  outline: none;
+}
+
+.left-arrow {
+  left: 100px;
+}
+
+.right-arrow {
+  right: 100px;
+}
+
+.confirm-button {
+  margin-top: 16px;
+  font-size: 25px;
+  background-color: #3b5e3b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.confirm-button:hover {
+  background-color: #2e4b2e;
+  transform: scale(1.1);
+}
+
+/* Save Page Styling */
+.save-title {
+  color: #3b5e3b;
+  margin-bottom: 100px;
 }

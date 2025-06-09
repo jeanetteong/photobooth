@@ -1,10 +1,12 @@
-import { Routes, Route, useNavigate } from 'react-router-dom'
-import Picture from './Picture.jsx'
-import Frame from './Frame.jsx';
-import './App.css'
+import { Routes, Route, useNavigate } from "react-router-dom";
+import Picture from "./Picture.jsx";
+import Frame from "./Frame.jsx";
+import Save from "./Save.jsx";
+
+import "./App.css";
 
 function Home() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -12,11 +14,11 @@ function Home() {
         WELCOME TO <br />
         <span className="photobooth-name">WTHELLY PHOTOBOOTH</span>
       </h1>
-      <button className="start-button" onClick={() => navigate('/picture')}>
+      <button className="start-button" onClick={() => navigate("/picture")}>
         START
       </button>
     </div>
-  )
+  );
 }
 
 function App() {
@@ -25,9 +27,9 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/picture" element={<Picture />} />
       <Route path="/frame" element={<Frame />} />
+      <Route path="/save" element={<Save />} />
     </Routes>
-  )
+  );
 }
 
-
-export default App
+export default App;
