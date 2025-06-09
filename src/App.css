@@ -125,3 +125,36 @@ body {
   justify-content: center;
   gap: 30px;
 }
+
+/* Frame Page Styling */
+.frame-title {
+  margin-bottom: 100px;
+}
+
+.frame-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:100px;
+}
+
+.photostrip {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+  top: -35px;
+}
+
+.frame-photo {
+  width: 166px;
+  height: auto;
+  object-fit: cover;
+}
+
+.frame {
+  position: absolute;
+  z-index: 2;
+  box-shadow:4px 4px 10px rgba(0, 0, 0, 0.2);
+}

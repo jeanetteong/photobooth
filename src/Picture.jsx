@@ -123,7 +123,10 @@ export default function Picture() {
           </button>
         )}
         {isCaptureDone && (
-          <button onClick={() => navigate("/frame")} className="next-button">
+          <button
+            onClick={() => navigate("/frame", { state: { photos } })}
+            className="next-button"
+          >
             NEXT
           </button>
         )}
