@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 export default function Picture() {
   const navigate = useNavigate();
@@ -55,7 +55,12 @@ export default function Picture() {
           clearInterval(interval);
           capturePhoto();
           photoCountRef.current += 1;
-          setTimeout(takeNextPhoto, 1000);
+          if (photoCountRef.current < 4) {
+            setTimeout(takeNextPhoto, 1000);
+          } else {
+            setCountdown(0);
+            setIsCaptureDone(true);
+          }
         }
       }, 1000);
     };
@@ -118,7 +123,7 @@ export default function Picture() {
           </button>
         )}
         {isCaptureDone && (
-          <button onClick={() => navigate('/frame')} className="next-button">
+          <button onClick={() => navigate("/frame")} className="next-button">
             NEXT
           </button>
         )}
