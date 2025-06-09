@@ -1,12 +1,17 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 export default function Picture() {
+  const navigate = useNavigate();
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const photoCountRef = useRef(0);
+
   const [photoTaken, setPhotoTaken] = useState(false);
   const [countdown, setCountdown] = useState(0);
   const [photos, setPhotos] = useState([]);
   const [isHidden, setIsHidden] = useState(false);
+  const [isCaptureDone, setIsCaptureDone] = useState(false);
 
   useEffect(() => {
     //Request webcam access
@@ -28,11 +33,16 @@ export default function Picture() {
   //5 sec countdown
   const startCountdown = () => {
     setIsHidden(true);
-
-    let photoCount = 0;
+    setIsCaptureDone(false);
+    setPhotos([]);
+    photoCountRef.current = 0;
 
     const takeNextPhoto = () => {
-      if (photoCount >= 4) return;
+      if (photoCountRef.current >= 4) {
+        setCountdown(0);
+        setIsCaptureDone(true);
+        return;
+      }
 
       let seconds = 5;
       setCountdown(seconds);
@@ -44,13 +54,8 @@ export default function Picture() {
         if (seconds === 0) {
           clearInterval(interval);
           capturePhoto();
-          photoCount++;
-
-          if (photoCount < 4) {
-            setTimeout(takeNextPhoto, 1000);
-          } else {
-            setCountdown(0);
-          }
+          photoCountRef.current += 1;
+          setTimeout(takeNextPhoto, 1000);
         }
       }, 1000);
     };
@@ -105,6 +110,19 @@ export default function Picture() {
           ))}
         </div>
       )}
+
+      <div className="button-container">
+        {isCaptureDone && (
+          <button onClick={startCountdown} className="retake-button">
+            RETAKE
+          </button>
+        )}
+        {isCaptureDone && (
+          <button onClick={() => navigate('/frame')} className="next-button">
+            NEXT
+          </button>
+        )}
+      </div>
     </div>
   );
 }

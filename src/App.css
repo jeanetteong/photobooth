@@ -55,9 +55,12 @@ body {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scaleX(-1);
 }
 
-.capture-button {
+.capture-button,
+.retake-button,
+.next-button {
   margin-top: 16px;
   font-size: 25px;
   background-color: #3b5e3b;
@@ -68,7 +71,9 @@ body {
   transition: transform 0.2s;
 }
 
-.capture-button:hover {
+.capture-button:hover,
+.retake-button:hover,
+.next-button:hover {
   background-color: #2e4b2e;
   transform: scale(1.1);
 }
@@ -106,5 +111,17 @@ body {
 .photo-thumbnail {
   width: 150px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1) scaleX(-1);
+  transition: transform 0.3s ease;
+}
+
+/* .photo-thumbnail:hover {
+  transform: scale(1.1) scaleX(-1);
+} */
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }

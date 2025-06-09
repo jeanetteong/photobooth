@@ -1,5 +1,6 @@
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import Picture from './Picture.jsx'
+import Frame from './Frame.jsx';
 import './App.css'
 
 function Home() {
@@ -23,6 +24,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/picture" element={<Picture />} />
+      <Route path="/frame" element={<Frame />} />
     </Routes>
   )
 }
