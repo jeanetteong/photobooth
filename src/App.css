@@ -152,6 +152,7 @@ body {
   width: 170px;
   height: auto;
   object-fit: cover;
+  transform: scaleX(-1);
 }
 
 .frame {
