@@ -31,7 +31,7 @@ export default function Frame() {
         </button>
         <img
           className="frame"
-          src={`./src/assets/images/${frames[frameIndex]}`}
+          src={`/src/assets/images/${frames[frameIndex]}`}
           alt="Photo Frame"
         />
 
