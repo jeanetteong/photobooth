@@ -94,7 +94,7 @@ export default function Save() {
       <div className="frame-container" ref={frameRef}>
         <img
           className="frame"
-          src={`./src/assets/images/${selectedFrame}`}
+          src={`/images/${selectedFrame}`}
           alt="Selected Frame"
         />
 
