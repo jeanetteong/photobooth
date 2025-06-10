@@ -1,9 +1,10 @@
 import { useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas";
 
 export default function Save() {
   const location = useLocation();
+  const navigate = useNavigate();
   const { photos = [], selectedFrame } = location.state || {};
   const frameRef = useRef(null);
 
@@ -74,6 +75,9 @@ export default function Save() {
           
           // Clean up
           URL.revokeObjectURL(url);
+
+          //Redirect back to home page
+          navigate("/");
         }
       }, "image/png", 1.0); // Maximum quality for PNG
 
