@@ -149,7 +149,7 @@ body {
 }
 
 .frame-photo {
-  width: 170px;
+  width: 171px;
   height: auto;
   object-fit: cover;
   transform: scaleX(-1);
@@ -211,4 +211,20 @@ body {
 .save-title {
   color: #3b5e3b;
   margin-bottom: 100px;
+}
+
+.save-button {
+  margin-top: 16px;
+  font-size: 25px;
+  background-color: #3b5e3b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.save-button:hover {
+  background-color: #2e4b2e;
+  transform: scale(1.1);
 }

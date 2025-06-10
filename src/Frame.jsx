@@ -6,7 +6,13 @@ export default function Frame() {
   const location = useLocation();
   const photos = location.state?.photos || [];
 
-  const frames = ["smiski_frame.png", "stardew_frame.png"];
+  const frames = [
+    "smiski_frame.png",
+    "birthday_frame.png",
+    "stardew_frame.png",
+    "cat_frame.png",
+    "dachshund_frame.png"
+  ];
   const [frameIndex, setFrameIndex] = useState(0);
 
   const handlePrev = () => {

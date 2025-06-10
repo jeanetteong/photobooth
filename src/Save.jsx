@@ -112,7 +112,7 @@ export default function Save() {
           className="save-button"
           disabled={photos.length === 0}
         >
-          Download Photostrip
+          SAVE
         </button>
       </div>
     </div>
